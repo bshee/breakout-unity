@@ -41,11 +41,11 @@ public class BatControl : MonoBehaviour {
       newX = maxBounds.x;
     }
     
-    transform.position = new Vector3(newX, currentPos.y, 0);
+    //transform.position = new Vector3(newX, currentPos.y, 0);
 	}
   
   // fun with physics
   void FixedUpdate() {
-    
+    rigidbody2D.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0);
   }
 }
