@@ -4,12 +4,10 @@ using System.Collections;
 public class BallMovement : MonoBehaviour {
   public float speed;
   
-  private Vector3 velocity;
   
 	// Use this for initialization
 	void Start () {
-    rigidbody2D.fixedAngle = true;
-    //velocity = new Vector3(0, speed * Mathf.Sin(-90), 0);
+    rigidbody2D.velocity = new Vector3(0, speed * Mathf.Sin(-90), 0);
 	}
 	
 	// Update is called once per frame
@@ -17,7 +15,10 @@ public class BallMovement : MonoBehaviour {
     //transform.position += velocity * Time.deltaTime;
 	}
   
-  void OnCollisionEnter(Collision collision) {
+  void FixedUpdate() {
+  }
+  
+  void OnCollisionEnter2D(Collision2D collision) {
     Debug.Log("Ouch!");
   }
 }

@@ -20,7 +20,6 @@ public class BatControl : MonoBehaviour {
     maxBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - width/2, Screen.height, 10));
     Debug.Log(minBounds.ToString());
     
-    rigidbody2D.fixedAngle = true;
     //Debug.Log("Camera pixel height " + Camera.main.pixelHeight);
     //Debug.Log("Camera pixel width " + Camera.main.pixelWidth);
     //Debug.Log(Camera.main.WorldToScreenPoint(transform.position).ToString()) ;
