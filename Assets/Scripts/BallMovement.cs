@@ -8,6 +8,7 @@ public class BallMovement : MonoBehaviour {
   
 	// Use this for initialization
 	void Start () {
+    rigidbody2D.fixedAngle = true;
     //velocity = new Vector3(0, speed * Mathf.Sin(-90), 0);
 	}
 	
