@@ -18,7 +18,6 @@ public class BatControl : MonoBehaviour {
     width = 32;
     minBounds = Camera.main.ScreenToWorldPoint(new Vector3(width/2, 0, 10));
     maxBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - width/2, Screen.height, 10));
-    Debug.Log(minBounds.ToString());
     
     //Debug.Log("Camera pixel height " + Camera.main.pixelHeight);
     //Debug.Log("Camera pixel width " + Camera.main.pixelWidth);
@@ -29,7 +28,7 @@ public class BatControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-    Vector3 currentPos = transform.position;
+    /*Vector3 currentPos = transform.position;
     float dir = Input.GetAxis("Horizontal");
     
     // need to bound by x coordinates
@@ -40,7 +39,7 @@ public class BatControl : MonoBehaviour {
     }
     else if (newX > maxBounds.x) {
       newX = maxBounds.x;
-    }
+    } */
     
     //transform.position = new Vector3(newX, currentPos.y, 0);
 	}

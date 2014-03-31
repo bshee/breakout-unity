@@ -19,6 +19,6 @@ public class BallMovement : MonoBehaviour {
   }
   
   void OnCollisionEnter2D(Collision2D collision) {
-    rigidbody2D.velocity = Vector3.Reflect(collision.relativeVelocity, collision.contacts[0].normal);
+    rigidbody2D.velocity = speed * Vector3.Reflect(collision.relativeVelocity, collision.contacts[0].normal).normalized;
   }
 }
