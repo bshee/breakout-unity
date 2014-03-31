@@ -19,6 +19,6 @@ public class BallMovement : MonoBehaviour {
   }
   
   void OnCollisionEnter2D(Collision2D collision) {
-    Debug.Log("Ouch!");
+    rigidbody2D.velocity = Vector3.Reflect(collision.relativeVelocity, collision.contacts[0].normal);
   }
 }
