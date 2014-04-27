@@ -5,7 +5,6 @@ public class ScoreControl : MonoBehaviour {
   
   private int score;
   
-	// Use this for initialization
 	void Start () {
     score = 0;
 	}
@@ -17,6 +16,6 @@ public class ScoreControl : MonoBehaviour {
   
   public void UpdateScore(int points) {
     score += points;
-    Debug.Log(score);
+    Debug.Log(score + ": " + points);
   }
 }
