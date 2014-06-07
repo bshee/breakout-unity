@@ -17,7 +17,7 @@ public class Breakable : MonoBehaviour {
 	}
   
   void OnCollisionEnter2D(Collision2D collision) {  
-    player.GetComponent<ScoreControl>().UpdateScore(points);
+    player.GetComponent<PlayerControl>().UpdateScore(points);
     Destroy(gameObject);
   }
 }

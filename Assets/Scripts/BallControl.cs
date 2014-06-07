@@ -21,7 +21,13 @@ public class BallControl : MonoBehaviour {
   
   void OnCollisionEnter2D(Collision2D collision) {
     if (collision.collider.tag == "Lose") {
-      Reset();
+      GameObject player = GameObject.Find("Player");
+      PlayerControl control = player.GetComponent<PlayerControl>();
+      control.UpdateLives(-1);
+      
+      if (!control.IsGameOver()) {
+        Reset();
+      }
     }
     else {
       rigidbody2D.velocity = speed * Vector3.Reflect(collision.relativeVelocity, collision.contacts[0].normal).normalized;
