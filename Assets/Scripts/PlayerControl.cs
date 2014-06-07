@@ -10,6 +10,9 @@ public class PlayerControl : MonoBehaviour {
   private int lives;
   private bool gameOver;
   private GameObject bat;
+  private GameObject ball;
+  private int breakables;
+  private int breakCount;
 
 	void Start () {
     score = 0;
@@ -19,6 +22,10 @@ public class PlayerControl : MonoBehaviour {
     gameOver = false;
 
     bat = GameObject.Find("Bat");
+    ball = GameObject.Find("Ball");
+
+    breakables = GameObject.FindGameObjectsWithTag("Breakable").Length;
+    breakCount = 0;
 	}
 
   public bool IsGameOver() {
@@ -34,6 +41,7 @@ public class PlayerControl : MonoBehaviour {
 
     // Disable bat and ball
     bat.GetComponent<BatControl>().enabled = false;
+    ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
   }
 	
   public void UpdateLives(int delta) {
@@ -48,5 +56,11 @@ public class PlayerControl : MonoBehaviour {
   public void UpdateScore(int points) {
     score += points;
     scoreText.text = "Score: " + score;
+
+    breakCount++;
+    
+    if(breakCount == breakables) {
+      GameOver();
+    }
   }
 }
