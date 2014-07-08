@@ -30,6 +30,8 @@ public class BallControl : MonoBehaviour {
       }
     }
     else {
+      audio.Play();
+      
       rigidbody2D.velocity = speed * Vector3.Reflect(collision.relativeVelocity, collision.contacts[0].normal).normalized;
       //Debug.Log(rigidbody2D.velocity);
       

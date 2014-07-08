@@ -4,6 +4,9 @@ using System.Collections;
 // flashes text and also goes to next scene when spacebar is pressed
 public class PromptText : MonoBehaviour {
   
+  
+  public AudioClip titleSound;
+  
   private float fadeDuration = 1f;
 
 	// Use this for initialization
@@ -42,7 +45,12 @@ public class PromptText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
     if (Input.GetKeyDown(KeyCode.Space)) {
+      //audio.Play();
+      AudioManager.PlaySound(titleSound);
+      
       Application.LoadLevel("Level1");
+      
+      
     }   
 	}
 }
