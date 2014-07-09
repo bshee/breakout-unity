@@ -42,6 +42,8 @@ public class PlayerControl : MonoBehaviour {
     // Disable bat and ball
     bat.GetComponent<BatControl>().enabled = false;
     ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    
+    Application.LoadLevel("Title");
   }
 	
   public void UpdateLives(int delta) {

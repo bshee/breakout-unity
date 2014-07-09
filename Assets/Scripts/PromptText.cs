@@ -7,7 +7,7 @@ public class PromptText : MonoBehaviour {
   
   public AudioClip titleSound;
   
-  private float fadeDuration = 1f;
+  private float fadeDuration = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,23 +19,29 @@ public class PromptText : MonoBehaviour {
     //bool fadeIn = false;
     
     while (true) {
-      Color c = guiText.material.color;
+      Color c = guiText.color;
       
+      // Specific alpha values for alternating when almost done fading in/out
       if (fadeOut) {
-        c.a -= Time.deltaTime/fadeDuration;
+        guiText.color = Color.Lerp(guiText.color, Color.clear, Time.deltaTime/fadeDuration);
+        /* c.a -= Time.deltaTime/fadeDuration;
+        */
         
-        if (c.a <= 0) {
+        
+        if (c.a <= 0.1f) {
           fadeOut = false;
         }
       }
       else { // fade in
-        c.a += Time.deltaTime/fadeDuration;
-        if (c.a >= 1) {
+        /*c.a += Time.deltaTime/fadeDuration; */
+        
+        guiText.color = Color.Lerp(guiText.color, Color.white, Time.deltaTime/fadeDuration);
+        if (c.a >= 0.9f) {
           fadeOut = true;
-        }
+        } 
       }
       
-      guiText.material.color = c;
+      //guiText.material.color = c;
       
       yield return null;
       //yield return new WaitForSeconds(0.05f);

@@ -193,7 +193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2061115297}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &189540874
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2061115297}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &317371173
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2061115297}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &317371175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,7 +875,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2061115297}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1001 &706328192
 Prefab:
   m_ObjectHideFlags: 0
@@ -1215,7 +1215,7 @@ Transform:
   m_LocalScale: {x: .961073339, y: .961073339, z: 1}
   m_Children: []
   m_Father: {fileID: 2061115297}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &891256025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1446,7 +1446,7 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1687,7 +1687,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2061115297}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1001 &1276241543
 Prefab:
   m_ObjectHideFlags: 0
@@ -2066,7 +2066,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2061115297}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &1761211173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,7 +2146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2061115297}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1001 &1798902130
 Prefab:
   m_ObjectHideFlags: 0
@@ -2180,6 +2180,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7530b6c41946d9545a34aa2bedf3dd39, type: 2}
       propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 7530b6c41946d9545a34aa2bedf3dd39, type: 2}
+      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2375,7 +2379,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2061115297}
-  m_RootOrder: 0
+  m_RootOrder: 8
 --- !u!1001 &1993473452
 Prefab:
   m_ObjectHideFlags: 0
@@ -2488,7 +2492,6 @@ Transform:
   m_LocalPosition: {x: -.113205872, y: .611954868, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1970430473}
   - {fileID: 317371174}
   - {fileID: 1761211177}
   - {fileID: 484324472}
@@ -2497,6 +2500,7 @@ Transform:
   - {fileID: 891256024}
   - {fileID: 246953550}
   - {fileID: 79273378}
+  - {fileID: 1970430473}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &2137766583
