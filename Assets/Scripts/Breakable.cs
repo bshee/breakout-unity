@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Breakable : MonoBehaviour {
   
-  public GameObject player;
+  private GameObject player;
   public int points;
   public AudioClip breakSound;
   
 	// Use this for initialization
 	void Start () {
-	
+    player = GameObject.FindWithTag("Player");
 	}
 	
 	// Update is called once per frame
