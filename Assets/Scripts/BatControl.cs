@@ -27,9 +27,31 @@ public class BatControl : MonoBehaviour {
     
     //transform.position = new Vector3(newX, currentPos.y, 0);
 	}
+
+
+  void EnforceBounds() {
+    Vector3 newPosition = transform.position;
+    Camera main = Camera.main;
+    Vector3 cameraPos = main.transform.position;
+
+    BoxCollider2D box = collider2D as BoxCollider2D;
+    float width = box.size.x;
+
+    float xDist = main.aspect * main.orthographicSize;
+    float xMax = cameraPos.x + xDist - width / 2;
+    float xMin = cameraPos.x - xDist + width / 2;
+
+
+    if (newPosition.x < xMin || newPosition.x > xMax) {
+      newPosition.x = Mathf.Clamp(newPosition.x, xMin, xMax);
+      transform.position = newPosition;
+      rigidbody2D.velocity = Vector2.zero;
+    }
+  }
   
   // fun with physics
   void FixedUpdate() {
     rigidbody2D.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0);
+    EnforceBounds();
   }
 }

@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleSound: {fileID: 8300000, guid: 56f8b4c676aefa646a88c56ba9022cd7, type: 3}
+  fadeDuration: 1
 --- !u!4 &394354890
 Transform:
   m_ObjectHideFlags: 0
@@ -368,12 +369,12 @@ GameObject:
   - 4: {fileID: 1475685660}
   - 131: {fileID: 1475685659}
   m_Layer: 0
-  m_Name: Fader (NYI)
+  m_Name: Fader
   m_TagString: Fader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!131 &1475685659
 GUITexture:
   m_ObjectHideFlags: 0
@@ -382,7 +383,7 @@ GUITexture:
   m_GameObject: {fileID: 1475685658}
   m_Enabled: 1
   m_Texture: {fileID: 2800000, guid: 4455e2767520ef24a8af538858992681, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: .501960814}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_PixelInset:
     serializedVersion: 2
     x: 0
@@ -519,4 +520,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754a5ab830fa3f047a82f26de967db3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
+  fadeDuration: .75

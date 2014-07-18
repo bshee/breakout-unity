@@ -62,7 +62,8 @@ public class PlayerControl : MonoBehaviour {
     breakCount++;
     
     if(breakCount == breakables) {
-      GameOver();
+      Application.LoadLevel("Winner");
+      //GameOver();
     }
   }
 }
