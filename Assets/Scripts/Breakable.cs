@@ -3,23 +3,25 @@ using System.Collections;
 
 public class Breakable : MonoBehaviour {
   
-  private GameObject player;
   public int points;
+  public GameObject star;
+
+  [Range(0f, 1f)]
+  public float starSpawnChance;
   public AudioClip breakSound;
   
-	// Use this for initialization
-	void Start () {
-    player = GameObject.FindWithTag("Player");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-  
   void OnCollisionEnter2D(Collision2D collision) {  
+    // Check to spawn a star
+    if (Random.value < starSpawnChance) {
+      Instantiate(star, transform.position, Quaternion.identity);
+      PlayerControl.IncreaseBreakablesCount();
+    }
+
     AudioManager.PlaySound(breakSound);
-    player.GetComponent<PlayerControl>().UpdateScore(points);
+    PlayerControl.UpdateScore(points);
+    PlayerControl.UpdateBreakCount();
+    
+
     Destroy(gameObject);
   }
 }

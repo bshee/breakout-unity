@@ -18,26 +18,26 @@ public class BallControl : MonoBehaviour {
   
   void FixedUpdate() {
   }
-  
-  void OnCollisionEnter2D(Collision2D collision) {
-    if (collision.collider.tag == "Lose") {
-      GameObject player = GameObject.Find("Player");
-      PlayerControl control = player.GetComponent<PlayerControl>();
-      control.UpdateLives(-1);
-      
-      if (!control.IsGameOver()) {
+
+
+  void OnTriggerEnter2D(Collider2D other) {
+    if (other.tag == "Lose") {
+      PlayerControl.UpdateLives(-1);
+
+      if (!PlayerControl.IsGameOver()) {
         Reset();
       }
     }
-    else {
-      audio.Play();
-      
-      rigidbody2D.velocity = speed * Vector3.Reflect(collision.relativeVelocity, collision.contacts[0].normal).normalized;
-      //Debug.Log(rigidbody2D.velocity);
-      
-      if (rigidbody2D.velocity.y == 0) {
-        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, Random.value * 2 - 1);
-      }
+  }
+  
+  void OnCollisionEnter2D(Collision2D collision) {
+    audio.Play();
+    
+    rigidbody2D.velocity = speed * Vector3.Reflect(collision.relativeVelocity, collision.contacts[0].normal).normalized;
+    //Debug.Log(rigidbody2D.velocity);
+    
+    if (rigidbody2D.velocity.y == 0) {
+      rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, Random.value * 2 - 1);
     }
   }
   

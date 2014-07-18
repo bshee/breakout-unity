@@ -25,4 +25,8 @@ public class AudioManager : MonoBehaviour {
     instance.audio.clip = clip;
     instance.audio.Play();
   }
+
+  public static void PlayOneShot(AudioClip clip, float volume) {
+    Instance.audio.PlayOneShot(clip, volume);
+  }
 }
