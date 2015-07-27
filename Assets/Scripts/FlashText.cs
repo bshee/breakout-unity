@@ -12,11 +12,11 @@ public class FlashText : MonoBehaviour {
 	}
   
   IEnumerator FadeOut() {
-    Color original = guiText.color;
+    Color original = GetComponent<GUIText>().color;
     
     for (float time = 0f; time < 1.0f; time += Time.deltaTime / fadeDuration) {
       Color newColor = Color.Lerp(original, Color.clear, time);
-      guiText.color = newColor;
+      GetComponent<GUIText>().color = newColor;
       yield return null;
     }
     
@@ -24,11 +24,11 @@ public class FlashText : MonoBehaviour {
   }
   
   IEnumerator FadeIn() {
-    Color original = guiText.color;
+    Color original = GetComponent<GUIText>().color;
     
     for (float time = 0f; time < 1f; time += Time.deltaTime / fadeDuration) {
       Color newColor = Color.Lerp(original, Color.white, time);
-      guiText.color = newColor;
+      GetComponent<GUIText>().color = newColor;
       yield return null;
     }
     

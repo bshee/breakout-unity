@@ -22,11 +22,11 @@ public class AudioManager : MonoBehaviour {
   }
   
 	public static void PlaySound(AudioClip clip) {
-    instance.audio.clip = clip;
-    instance.audio.Play();
+    instance.GetComponent<AudioSource>().clip = clip;
+    instance.GetComponent<AudioSource>().Play();
   }
 
   public static void PlayOneShot(AudioClip clip, float volume) {
-    Instance.audio.PlayOneShot(clip, volume);
+    Instance.GetComponent<AudioSource>().PlayOneShot(clip, volume);
   }
 }

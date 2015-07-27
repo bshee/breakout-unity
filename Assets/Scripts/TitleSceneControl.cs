@@ -18,11 +18,11 @@ public class TitleSceneControl : MonoBehaviour {
 
 
   IEnumerator FadeOut() {
-    Color original = fader.guiTexture.color;
+    Color original = fader.GetComponent<GUITexture>().color;
 
     for (float time = 0f; time < 1f; time += Time.deltaTime / fadeDuration) {
       Color newColor = Color.Lerp(original, Color.black, time);
-      fader.guiTexture.color = newColor;
+      fader.GetComponent<GUITexture>().color = newColor;
       yield return null;
     }
 

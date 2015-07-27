@@ -34,7 +34,8 @@ public class BatControl : MonoBehaviour {
     Camera main = Camera.main;
     Vector3 cameraPos = main.transform.position;
 
-    BoxCollider2D box = collider2D as BoxCollider2D;
+    // change width to be the renderer's as that is the main reason for
+    BoxCollider2D box = GetComponent<Collider2D>() as BoxCollider2D;
     float width = box.size.x;
 
     float xDist = main.aspect * main.orthographicSize;
@@ -45,13 +46,13 @@ public class BatControl : MonoBehaviour {
     if (newPosition.x < xMin || newPosition.x > xMax) {
       newPosition.x = Mathf.Clamp(newPosition.x, xMin, xMax);
       transform.position = newPosition;
-      rigidbody2D.velocity = Vector2.zero;
+      GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
   }
   
   // fun with physics
   void FixedUpdate() {
-    rigidbody2D.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0);
+    GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0);
     EnforceBounds();
   }
 }
